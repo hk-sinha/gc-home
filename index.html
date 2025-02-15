@@ -1,0 +1,474 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Cloud</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3efc37e746.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/bouncy.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+</head>
+<body>
+    <section class="body">
+    <l-bouncy
+    size="80"
+    speed="1.75"
+    color="white"
+    id="preloader"
+></l-bouncy>
+<header class="header">
+    <a href="index.html"><img src="assets/logo1.png" class="logo" alt=""></a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <i class="bx bx-x" style="display: none;"></i>
+    <nav id="navbar" class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#ourproduct">Our Products</a>
+        <div class="dropdown">
+            <a href="#solution" id="projects-link">Solutions</a>
+            <div class="dropdown-content" id="projects-dropdown">
+                <a href="#solution">Home Automation</a>
+                <a href="#solution">Building Automation</a>
+                <a href="#solution">Office Automation</a>
+            </div>
+        </div>
+        <!-- <a href="#home">About Us</a> -->
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+        <div class="btn-box">
+            <a href="#contact" class="btn">Book Demo</a>
+        </div>
+</header>
+<!-- Dropdwon script -->
+<script>const projectsLink = document.getElementById("projects-link");
+const projectsDropdown = document.getElementById("projects-dropdown");
+let timeoutId;
+
+projectsLink.addEventListener("mouseover", () => {
+    clearTimeout(timeoutId);
+    projectsDropdown.style.display = "block";
+
+});
+
+projectsLink.addEventListener("mouseout", () => {
+    timeoutId = setTimeout(() => {
+        projectsDropdown.style.display = "none";
+        
+    }, 500);
+});
+
+projectsDropdown.addEventListener("mouseover", () => {
+    clearTimeout(timeoutId);
+});
+
+projectsDropdown.addEventListener("mouseout", (event) => {
+    if (!event.toElement ||!projectsDropdown.contains(event.toElement)) {
+        timeoutId = setTimeout(() => {
+            projectsDropdown.style.display = "none";
+        }, 500);
+    }
+});
+
+const dropdownLinks = projectsDropdown.getElementsByTagName("a");
+
+for (let i = 0; i < dropdownLinks.length; i++) {
+    dropdownLinks[i].addEventListener("mouseover", () => {
+        clearTimeout(timeoutId);
+    });
+
+    dropdownLinks[i].addEventListener("mouseout", (event) => {
+        if (!event.toElement ||!projectsDropdown.contains(event.toElement)) {
+            timeoutId = setTimeout(() => {
+                projectsDropdown.style.display = "none";
+            }, 500);
+        }
+    });
+}</script>
+<section class="home" id="home">
+    <div class="home-content">
+        <h1 class="auto-type"></h1>        
+    </section>
+    <section class="head">
+        <div class="heading">
+            <h3>You can use the entire system in many different ways</h3>
+        </div>
+    </section>
+
+<section class="container">
+
+        <div class="img-content">
+            <img src="images/devices/Mobile.jpg" alt="">
+            <h2>Phone</h2>
+            <div class="overlay">
+            <h3 class="image-text">Phone<p>Seamlessly control your INNEXIA system from the palm of your hand. The user-friendly mobile app lets you manage lighting, security, and more, anytime, anywhere.</p></h2>
+            </div>
+        </div>
+        <div class="img-content">
+            <img src="images/devices/end-device.jpg" alt="">
+            <h2>Sensors</h2>
+            <div class="overlay">
+                <h3 class="image-text">Sensors<p>INNEXIA offers the convenience of end devices like the Magic Cube and Dash Button. Effortlessly trigger your favourite scenes or routines with a simple tap or gesture.</p></h3>
+                </div>
+        </div>
+        <div class="img-content">
+            <img src="images/devices/Voice.jpg" alt="">
+            <h2>Voice</h2>
+            <div class="overlay">
+                <h3 class="image-text">Voice<p>Experience hands-free control with voice commands. INNEXIA integrates with popular voice assistants allowing you to control your smart devices with simple voice prompts.</p></h3>
+                </div>        </div>
+        <div class="img-content">
+            <img src="images/devices/e-switch.jpg" alt="">
+            <h2>Manual Switch</h2>
+            <div class="overlay">
+                <h3 class="image-text">Manual Switch<p>No need to replace your existing switches! INNEXIA seamlessly integrates with your current setup, enabling you to control smart devices through your traditional switches for added flexibility.</p></h3>
+                </div>
+                    </div>
+        <div class="img-content">
+            <img src="images/devices/remote.jpg" alt="">
+            <h2>Remote</h2>
+            <div class="overlay">
+                <h3 class="image-text">Remote<p>Turn your TV into a smart control centre with INNEXIA. Easily access and manage your smart devices using your television screen, making home automation a breeze.</p></h3>
+                </div>
+                    </div>
+    </div>
+</section>
+<section class="experience" id="experience">
+    <div class="video-change">
+        <!-- <video id="myVideo" width="100%" autoplay muted preload="auto">
+            <source src="assets/videos/Default.mp4" type="video/mp4">
+        </video> -->
+        <div class="video-change">
+            <video id="myVideo" width="100%" autoplay muted preload="auto">
+                <source src="assets/videos/Default.mp4" type="video/mp4">
+            </video>
+            
+        <div class="button-video">
+        <div class="wrap-check-64">
+            <label class="toggle-label">Lights</label>
+            <label class="switch" for="checkbox-lights" >
+            <input type="checkbox"  id="checkbox-lights" onclick="if(this.checked){document.getElementById('myVideo').src='assets/videos/light_on.mp4'; document.getElementById('myVideo').play()}else{document.getElementById('myVideo').src='assets/videos/light_off.mp4'; document.getElementById('myVideo').play()}">
+            <div class="slider round">
+            </div>
+            </label>
+        </div>
+        <div class="wrap-check-64">
+            <label class="toggle-label">TV</label>
+            <label class="switch" for="checkbox-tv">
+            <input type="checkbox" id="checkbox-tv" onclick="if(this.checked){document.getElementById('myVideo').src='assets/videos/tv_on.mp4'; document.getElementById('myVideo').play()}else{document.getElementById('myVideo').src='assets/videos/tv_off.mp4'; document.getElementById('myVideo').play()}">
+            <div class="slider round"></div>
+            </label>
+        </div>
+        <div class="wrap-check-64">
+            <label class="toggle-label">CURTAINS</label>
+            <label class="switch" for="checkbox-room">
+            <input type="checkbox" id="checkbox-room" onclick="if(this.checked){document.getElementById('myVideo').src='assets/videos/curtains_on.mp4'; document.getElementById('myVideo').play()}else{document.getElementById('myVideo').src='assets/videos/curtains_off.mp4'; document.getElementById('myVideo').play()}">
+            <div class="slider round"></div>
+            </label>
+        </div>
+        <div class="wrap-check-64">
+            <label class="toggle-label">AC</label>
+            <label class="switch" for="checkbox-ac">
+            <input type="checkbox" id="checkbox-ac" onclick="if(this.checked){document.getElementById('myVideo').src='assets/videos/ac_on.mp4'; document.getElementById('myVideo').play()}else{document.getElementById('myVideo').src='assets/videos/ac_off.mp4'; document.getElementById('myVideo').play()}">
+            <div class="slider round"></div>
+            </label>
+        </div>
+
+        </div>
+        
+    </div>
+</section>
+<section class="switch1">
+
+</section>
+<section id="solution" class="solution">
+    <section class="head">
+        <div class="heading">
+            <h3>GCHome Helps You Everywhere</h3>
+        </div>
+    </section>
+    <section class="solutions">
+        <p>Seamless solution that enhances Comfort & Security at your home. GCHome mobile control APP contributes to your peace of mind even when you are away from home</p>
+        <div class="cards-container">
+            <div class="card">
+                <a href="#">
+                    <img src="images/home.jpg" alt="" >
+                    <h4>Home Automation</h4>
+                    <li>Smart Schedule</li>
+                    <li>Smart Scene</li>
+                    <li>Monitor & Control</li>
+                    <li>Easy to Use for Elders & Children</li>
+                    <li>Energy Efficiency</li>
+                </a>
+                
+            </div>
+    
+    
+            <div class="card">
+                <a href="#">
+                    <img src="images/Building.jpg" alt="">
+                    <h4>Building Automation</h4>
+                    <li>Energy Saving</li>
+                    <li>Increase Efficiency</li>
+                    <li>Seamless Integration</li>
+                    <li>Individual Floor Control</li>
+                    <li>Reduce Manpower</li>
+                </a>
+                
+            </div>
+    
+            <div class="card">
+                <a href="#">
+                    <img src="images/office.jpg" alt="">
+                    <h4>Office Automation</h4>
+                    <li>Smart Modes</li>
+                <li>Smart Schedule</li>
+                <li>Easy to Monitor & Control</li>
+                <li>Increase Efficiency</li>
+                <li>Energy Efficient</li>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+    </section>
+    <section id="ourproduct" class="ourproduct">
+    <section class="head">
+        <div class="heading">
+            <h3>Our Products</h3>
+            <a href="#">Know More</a>
+        </div>
+        
+    </section>
+
+    <section class="section__container store__container" id="store">
+        <!-- Slider main container -->
+    <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+        <a href="#">
+            <div class="store__card">
+            <h4></h4>
+            <img src="images/Products/1.png" alt="store" />
+            <h3>Zigbee Switch Module</h3>
+        </a>
+        </div>
+        </div>
+        <div class="swiper-slide">
+        <div class="store__card">
+            <h4></h4>
+            <img src="images/Products/2.png" alt="store" />
+            <h3>16A Module</h3>
+        </div>
+        </div>
+        <div class="swiper-slide">
+        <div class="store__card">
+            <h4></h4>
+            <img src="images/Products/3.png" alt="store" />
+            <h3>Contact Sensor</h3>
+        </div>
+        </div>
+        <div class="swiper-slide">
+        <div class="store__card">
+            <h4></h4>
+            <img src="images/Products/4.png" alt="store" />
+            <h3>Zigbee Curtain Module</h3>
+        </div>
+        </div>
+        <div class="swiper-slide">
+        <div class="store__card">
+            <h4></h4>
+            <img src="images/Products/5.png" alt="store" />
+            <h3>Dash button</h3>
+        </div>
+        </div>
+        <div class="swiper-slide">
+        <div class="store__card">
+            <h4></h4>
+            <img src="images/Products/6.png" alt="store" />
+            <h3>G-Switch</h3>
+        </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="store__card">
+                <h4></h4>
+                <img src="images/Products/7.png" alt="store" />
+                <h3>Door Lock</h3>
+            </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="store__card">
+                    <h4></h4>
+                    <img src="images/Products/8.png" alt="store" />
+                    <h3>Magic Cube</h3>
+                </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="store__card">
+                        <h4></h4>
+                        <img src="images/Products/9.png" alt="store" />
+                        <h3>Outdoor Siren</h3>
+                    </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="store__card">
+                            <h4></h4>
+                            <img src="images/Products/10.png" alt="store" />
+                            <h3>Motion Sensor</h3>
+                        </div>
+                        </div>
+        </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    </div>
+</section>
+</section>
+
+
+<section id="contact">
+    <footer>
+        <div class="fcontainer">
+            <div class="sec">
+            <h2>About Us</h2>
+            <p>"GREEN CLOUD iSOFT PRIVATE LIMITED is a provider of automation systems for homes and businesses. Personalized smart living experience perfect for any Home, Office, Township. Turn your home into a smart ecosystem to control every element with a simple tap of your fingertips."</p>
+            <ul class="sci">
+                <!-- <li><a href=""><i class='bx bxl-facebook-circle' ></i></a></li> -->
+                <li><a href=""><i class='bx bxl-instagram' ></i></a></li>
+                <li><a href="https://www.youtube.com/@greencloudisoft2399"><i class='bx bxl-youtube'></i></a></li>
+                <!-- <li><a href=""><i class='bx bxl-linkedin-square' ></i></a></li> -->
+            </ul>
+        </div>
+        <div class="sec quickLinks">
+            <h2>Get In Touch</h2>
+            <ul>
+                <li><a >FAQs</a></li>
+                <li><a >Partner With Us</a></li>
+                <li><a >Support</a></li>
+                <li><a >Terms & Condition</a></li>
+            </ul>
+        </div>
+        <div class="sec contact">
+            <h2>Contact Us</h2>
+            <ul class="info">
+                <li>
+                    <span><i class='bx bxs-map' aria-hidden="true"></i></span>
+                    <span>E/72, GIDC Electronic Estate,<br>Sector 26,Gandhinagar,
+                        Gujarat 382026</span>
+                </li>
+                <li>
+                    <span><i class='bx bxs-phone' aria-hidden="true" ></i></span>
+                    <p><a href="tel:+91-9265872944">+91-92658 72944</a><br><a href="tel:+91-70209 20762">+91-70209 20762</a></p>
+                    
+                </li>
+                <li>
+                    <span><i class='bx bxl-gmail' aria-hidden="true" ></i></span>
+                    <p><a href="mailto:greencloudisoft@gmail.com">greencloudisoft@gmail.com</a></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    </footer>
+
+<div class="places">
+    <p>Gandhinagar Ahmedabad Surat Baroda Ajmer Jaipur Pune Mumbai Anand</p>
+</div>
+<div class="copyright">
+    <p>Copyright © 2024 GREEN CLOUD iSOFT PRIVATE LIMITED. Website Design By Himanshu Kumar Sinha.</p>
+</div>
+</section>
+<!-- JAVASCRIPT HERE -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        preloader.style.display = 'none';
+    });
+</script>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js">//autotype</script>
+<script>
+        var typed= new Typed(".auto-type",{
+            strings:["Where convenience meets innovation.","Make your home work for you with automation","Simplify your life with smart home technology."],
+                typeSpeed:40,
+                backSpeed:30,
+                Delay:500,
+                loop:true,
+                cursorChar:""
+        });
+        //prevent right click
+        document.addEventListener("contextmenu", function(event){
+    event.preventDefault();
+}, false);
+    </script>
+    <!-- <script>
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 123 || (e.ctrlKey && e.shiftKey && e.keyCode === 73)) {
+                e.preventDefault();
+                return false;
+}
+});
+    </script> -->
+    <script>
+        document.getElementById('myVideo').addEventListener('ended', function() {
+        this.currentTime = this.duration;
+        });
+
+        const video = document.getElementById('myVideo');
+        const experienceSection = document.getElementById('experience');
+        const observer = new IntersectionObserver((entries) => {
+if (entries[0].isIntersecting) {
+    video.play();
+} else {
+    video.pause();
+}
+}, {
+    threshold: 0.8, 
+});
+
+observer.observe(experienceSection);
+    </script>
+    <script>
+    const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        const menuIconMenu = menuIcon.querySelector('.bx-menu');
+        const menuIconX = menuIcon.querySelector('.bx-x');
+        
+        menuIcon.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+            menuIconMenu.style.display = navbar.classList.contains('active') ? 'none' : 'block';
+            menuIconX.style.display = navbar.classList.contains('active') ? 'block' : 'none';
+        });</script>
+        <script>
+            const swiper =new Swiper(".swiper",{
+                loop:true,
+                autoplay:{
+                    delay:2500,
+                    disableOnInteraction:false,
+                },
+                effect:"coverflow",
+                grabCursor:true,
+                centerSlides:true,
+                slidesPerView:"auto",
+                coverflowEffect:{
+                    rotate:0,
+                    depth:100,
+                    modifier:1,
+                    scale:.75,
+                    slideShadows:false,
+                    stretch:-100
+                },
+
+                pagination:{
+                    el:".swiper-pagination",
+                }
+            })
+        </script>
+<script defer src="main.js"></script>
+<!-- JAVASCRIPT END HERE -->
+</body>
+</html>
